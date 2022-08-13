@@ -20,39 +20,14 @@ function cle(){
     rem = 0;
     result = 0;
     document.getElementById('result').value = '';
+    document.getElementById('result').style.textAlign = '';
+
 }
 
 let result;
-let rem;
 
 function calculate(){
-    result = parseInt(op); //12
-    while(op != ''){
-        rem = parseInt(op);//12
-        let sign = op[rem.toString().length];//+
-        console.log(sign);
-        op = op.substring(rem.toString().length + 1);//6+5//
-        rem = parseInt(op);//6//
-        if(Number.isInteger(rem)){
-            if(sign == '+'){
-            result = result + rem;
-            }
-            else if(sign == '-'){
-                result = result - rem;
-            }
-            else if(sign == 'x'){
-                result = result * rem;
-            }
-            else if(sign == '/'){
-                result = result / rem;
-            }
-            else{
-                //nothing
-            }
-        }
-        
-    }
-    
+    result = eval(op);   
     document.getElementById('result').value = result;
     document.getElementById('result').style.textAlign = 'right';
 }
